@@ -1,5 +1,30 @@
+body{
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    background-color:  #fdfdfd;
+
+}
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3398E1;
+    color: white;
+    text-align: center;
+}
+
+.shadow {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+
+
+
 .sidebar-nav {
     margin-top: 20px;
     padding: 0;
     list-style: none;
 }
+
