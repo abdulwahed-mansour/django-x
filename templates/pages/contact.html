@@ -1,18 +1,49 @@
 {% extends 'base.html'%}
+{% block title %}Contact Us{% endblock %}
 {% load crispy_forms_tags %}
 
 
 {% block content %}
 
+  <style>
+        .container{
+             padding-top: 15px;
+        }
+
+    #id_name{
+        width:100%
+        }
+
+    #id_message{
+        width:100%
+        }
+
+    #id_email{
+        width:100%
+        }
+</style>
+
   <div class="container p-4 mt-2 mb-5">
       <div class="w-responsive mx-auto p-4 rounded-lg border border-primary" style="background-color: #fbfcfd;">
-        <h2>Send Me a Message</h2>
-        <form action="" method="POST">
-            {% csrf_token %}
-                {{ form|crispy }}
-            <button type="reset" class="btn btn-secondary">Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+          <h2>Send Me a Message</h2>
+          <form action="" method="POST">
+              {% csrf_token %}
+
+              {% for hidden in form.hidden_fields %}
+              {{ hidden }}
+              {% endfor %}
+
+              {% for field in form.visible_fields %}
+              <div class="form-group">
+                  {{ field.errors }}
+                  <label>{{ field.label_tag }}</label>
+                  <p>{{ field }}</p>
+              </div>
+              {% endfor %}
+              <button type="reset" class="btn btn-secondary">Reset</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
       </div>
   </div> 
 {% endblock content %}
+
