@@ -3,7 +3,8 @@ var myPieChart = new Chart(ctxP, {
   plugins: [ChartDataLabels],
   type: 'pie',
   data: {
-    labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+    labels: ["غزة", "دير البلح", "القدس", "رفح", "رام الله"],
+
     datasets: [{
       data: [210, 130, 120, 160, 120],
       backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
@@ -16,7 +17,8 @@ var myPieChart = new Chart(ctxP, {
       position: 'right',
       labels: {
         padding: 20,
-        boxWidth: 10
+        boxWidth: 10,
+       
       }
     },
     plugins: {
